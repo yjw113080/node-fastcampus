@@ -6,7 +6,7 @@ const port = 3000;
 const nunjucks = require('nunjucks');
 const logger = require('morgan');
 const bodyParser = require('body-parser');
-
+const cookieParser = require('cookie-parser');
 
 // db 관련
 const db = require('./models');
@@ -33,7 +33,10 @@ nunjucks.configure('template', {
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(cookieParser());
 
+
+app.use('/uploads', express.static('uploads'));
 app.get('/', function(req,res){
     res.send('first app');
 });

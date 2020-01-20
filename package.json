@@ -4,16 +4,19 @@
   "description": "nodejs shopping mall",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon -e js,html app.js",
-    "dev": "nodemon app.js"
+    "start": "npx nodemon -e js,html app.js",
+    "dev": "npx nodemon app.js"
   },
-  "author": "",
+  "author": "염지원",
   "license": "ISC",
   "dependencies": {
+    "cookie-parser": "^1.4.4",
+    "csurf": "^1.10.0",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "moment": "^2.24.0",
     "morgan": "^1.9.1",
+    "multer": "^1.4.2",
     "mysql2": "^2.0.2",
     "nunjucks": "^3.2.0",
     "sequelize": "^4.42.0"
