@@ -13,6 +13,25 @@
 
             {{contact.description}}
 
+            <hr />
+            <ul>
+                {% for history in contact.History %}
+                    <li>
+                        {{ history.content }}
+                        (
+                            <a href="/contacts/delete/{{ contact.id }}/{{ history.id }}" 
+                                onclick="return confirm('삭제하시겠습니까?')">
+                                삭제
+                            </a>
+                        )
+                    </li>
+                {% endfor %}
+            </ul>
+            Contact History 작성하기
+            <form action="" method="post">
+                <textarea class="form-control" name="content" required></textarea>
+                <button class="btn btn-primary" style="margin-top: 10px">History 작성</button>
+            </form>
 
         </div>
     </div>
